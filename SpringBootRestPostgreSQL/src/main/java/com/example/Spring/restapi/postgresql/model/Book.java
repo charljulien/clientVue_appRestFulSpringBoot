@@ -19,6 +19,9 @@ public class Book implements Serializable {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "author")
+    private String author;
+
     @Column(name = "releaseDate")
     @Temporal(TemporalType.DATE)
     private Date releaseDate;
@@ -33,8 +36,9 @@ public class Book implements Serializable {
     public Book() {
     }
 
-    public Book(String name, Date releaseDate) {
+    public Book(String name, String author, Date releaseDate) {
         this.name = name;
+        this.author = author;
         this.releaseDate = releaseDate;
         this.read = false;
     }
@@ -51,6 +55,20 @@ public class Book implements Serializable {
     }
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Date getReleaseDate() {
